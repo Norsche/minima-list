@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <title th:text="${title}"></title>
-</head>
+<head th:replace="fragments :: head "></head>
 <body>
     <h1 th:text="${title}"></h1>
 
-    <p th:unless="${anime_alist} and ${anime_alist.size()}">No anime. :-(</p>
+    <nav th:replace="fragments :: navigation"></nav>
 
-    <a href="/anime/add">Add Anime</a>
+    <p th:unless="${anime_alist} and ${anime_alist.size()}">No anime. :-(</p>
 
     <ul>
         <li th:each="anime : ${anime_alist}" th:text="${anime}"></li>
