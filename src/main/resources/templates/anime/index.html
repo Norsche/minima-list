@@ -6,11 +6,12 @@
 
     <nav th:replace="fragments :: navigation"></nav>
 
-    <p th:unless="${anime_alist} and ${anime_alist.size()}">No anime. :-(</p>
+    <p th:unless="${anime_hmap} and ${anime_hmap.size()}">No anime. :-(</p>
 
-    <ul>
-        <li th:each="anime : ${anime_alist}" th:text="${anime}"></li>
-    </ul>
+    <tr th:each="anime : ${anime_hmap}">
+        <td th:text="${anime.key}">Name</td>
+        <td th:text="${anime.value}">Description</td>
+    </tr>
 
 </body>
 </html>
