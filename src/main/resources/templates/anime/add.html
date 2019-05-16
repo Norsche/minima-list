@@ -7,13 +7,11 @@
 <body>
     <h1 th:text="${title}"></h1>
 
-    <p th:unless="${anime_alist} and ${anime_alist.size()}">No anime. :-(</p>
+    <form method="post">
+        <input type="text" name="animeName" />
+        <input type="submit" value="Add Anime" />
 
-    <a href="/anime/add">Add Anime</a>
-
-    <ul>
-        <li th:each="anime : ${anime_alist}" th:text="${anime}"></li>
-    </ul>
+    </form>
 
 </body>
 </html>
